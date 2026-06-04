@@ -8,6 +8,7 @@ class UI {
         this.currentFilter = 'all';
         this.currentSort = 'default';
         this.searchQuery = '';
+        this.scrollObserver = null;
         this.init();
     }
 
@@ -85,7 +86,7 @@ class UI {
      * Setup scroll animations
      */
     setupScrollAnimations() {
-        const observer = new IntersectionObserver((entries) => {
+        this.scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
@@ -93,8 +94,16 @@ class UI {
             });
         }, { threshold: 0.1 });
 
+        this.observeFadeInElements();
+    }
+
+    /**
+     * Observe fade-in elements, including dynamically rendered ones
+     */
+    observeFadeInElements() {
+        if (!this.scrollObserver) return;
         document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
-            observer.observe(el);
+            this.scrollObserver.observe(el);
         });
     }
 
@@ -105,6 +114,13 @@ class UI {
         this.renderCategories();
         this.renderProducts(getAllProducts());
         this.updateCartUI(cart);
+    }
+
+    /**
+     * Format currency as Nigerian naira
+     */
+    formatCurrency(amount) {
+        return `₦${amount.toFixed(2)}`;
     }
 
     /**
@@ -216,6 +232,9 @@ class UI {
         grid.innerHTML = products.map(product => this.createProductCard(product)).join('');
         countEl.textContent = `Showing ${products.length} product${products.length !== 1 ? 's' : ''}`;
 
+        // Observe newly rendered product cards for scroll animation
+        this.observeFadeInElements();
+
         // Add click handlers
         document.querySelectorAll('.product-card').forEach(card => {
             card.addEventListener('click', () => {
@@ -247,8 +266,8 @@ class UI {
                 </div>
                 <div class="product-card-footer">
                     <div>
-                        <p class="product-card-price">$${product.price.toFixed(2)}</p>
-                        ${product.originalPrice > product.price ? `<p class="text-xs text-gray-500 line-through">$${product.originalPrice.toFixed(2)}</p>` : ''}
+                        <p class="product-card-price">${this.formatCurrency(product.price)}</p>
+                        ${product.originalPrice > product.price ? `<p class="text-xs text-gray-500 line-through">${this.formatCurrency(product.originalPrice)}</p>` : ''}
                     </div>
                     <button class="product-card-btn" onclick="event.stopPropagation();">
                         <i class="fas fa-plus"></i>
@@ -268,7 +287,7 @@ class UI {
         document.getElementById('modal-product-image').src = product.image;
         document.getElementById('modal-product-category').textContent = product.category.toUpperCase();
         document.getElementById('modal-product-name').textContent = product.name;
-        document.getElementById('modal-product-price').textContent = `$${product.price.toFixed(2)}`;
+        document.getElementById('modal-product-price').textContent = this.formatCurrency(product.price);
         document.getElementById('modal-product-description').textContent = product.description;
         document.getElementById('modal-qty-input').value = 1;
         
@@ -329,8 +348,8 @@ class UI {
         this.renderCartItems(cartInstance);
 
         // Update cart totals
-        document.getElementById('cart-subtotal').textContent = `$${cartInstance.getSubtotal().toFixed(2)}`;
-        document.getElementById('cart-total').textContent = `$${cartInstance.getTotal().toFixed(2)}`;
+        document.getElementById('cart-subtotal').textContent = this.formatCurrency(cartInstance.getSubtotal());
+        document.getElementById('cart-total').textContent = this.formatCurrency(cartInstance.getTotal());
     }
 
     /**
@@ -397,7 +416,7 @@ class UI {
                 <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                 <div class="cart-item-content">
                     <p class="cart-item-name">${item.name}</p>
-                    <p class="cart-item-price">$${item.price.toFixed(2)}</p>
+                    <p class="cart-item-price">${this.formatCurrency(item.price)}</p>
                     <div class="cart-item-quantity">
                         <button data-decrease="${item.id}">−</button>
                         <input type="number" data-qty="${item.id}" value="${item.quantity}" min="1">
