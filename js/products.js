@@ -226,6 +226,11 @@ const PRODUCTS = [
     }
 ];
 
+const PLACEHOLDER_IMAGE = 'assets/placeholder.svg';
+PRODUCTS.forEach(product => {
+    product.image = PLACEHOLDER_IMAGE;
+});
+
 console.log('Loaded PRODUCTS:', PRODUCTS.length);
 
 /**
