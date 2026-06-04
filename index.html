@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm2Home - Fresh From Farm to Your Doorstep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-cream font-inter text-gray-900">
+    
+    <!-- ============ HEADER / NAVBAR ============ -->
+    <header id="navbar" class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-leaf text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-green-700 group-hover:text-green-600 transition-colors">Farm2Home</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Home</a>
+                <a href="#shop" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Shop</a>
+                <a href="#about" class="text-gray-700 hover:text-green-600 font-medium transition-colors">About</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-green-600 font-medium transition-colors">Contact</a>
+            </div>
+
+            <!-- Cart & Mobile Menu Toggle -->
+            <div class="flex items-center gap-4">
+                <button id="cart-toggle" class="relative p-2 bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                    <i class="fas fa-shopping-bag text-green-700 text-xl"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center opacity-0">0</span>
+                </button>
+                <button id="mobile-menu-toggle" class="md:hidden p-2 text-gray-700 hover:text-green-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block px-4 py-3 hover:bg-green-50 transition-colors">Home</a>
+            <a href="#shop" class="block px-4 py-3 hover:bg-green-50 transition-colors">Shop</a>
+            <a href="#about" class="block px-4 py-3 hover:bg-green-50 transition-colors">About</a>
+            <a href="#testimonials" class="block px-4 py-3 hover:bg-green-50 transition-colors">Testimonials</a>
+            <a href="#contact" class="block px-4 py-3 hover:bg-green-50 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-cream to-yellow-50 overflow-hidden">
+        <!-- Parallax Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob-2"></div>
+            <div class="absolute bottom-10 left-1/2 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob-3"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <div class="mb-6 inline-block">
+                <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-semibold">🌿 100% Fresh & Organic</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold font-poppins mb-6 bg-gradient-to-r from-green-700 via-green-600 to-yellow-600 bg-clip-text text-transparent animate-fade-in">
+                Fresh From Farm to Your Doorstep
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light animate-fade-in-delay">
+                Discover premium, freshly harvested produce delivered directly from local farms. Support sustainable agriculture while enjoying the finest quality vegetables, fruits, and dairy.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-delay-2">
+                <a href="#shop" class="px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-shopping-cart mr-2"></i>Shop Now
+                </a>
+                <a href="#about" class="px-8 py-4 border-2 border-green-600 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-all duration-300">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="grid grid-cols-3 gap-4 md:gap-8 mt-16">
+                <div class="animate-fade-in-delay-3">
+                    <p class="text-3xl md:text-4xl font-bold text-green-600">500+</p>
+                    <p class="text-gray-600 text-sm">Happy Customers</p>
+                </div>
+                <div class="animate-fade-in-delay-3">
+                    <p class="text-3xl md:text-4xl font-bold text-green-600">50+</p>
+                    <p class="text-gray-600 text-sm">Farm Partners</p>
+                </div>
+                <div class="animate-fade-in-delay-3">
+                    <p class="text-3xl md:text-4xl font-bold text-green-600">24h</p>
+                    <p class="text-gray-600 text-sm">Fast Delivery</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#features" class="text-green-600 text-2xl"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- ============ FEATURES SECTION ============ -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-4 text-gray-900">Why Choose Farm2Home?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Experience the perfect blend of freshness, sustainability, and convenience</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-cream rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-on-scroll">
+                    <div class="text-4xl mb-4"><i class="fas fa-leaf text-green-600"></i></div>
+                    <h3 class="text-2xl font-bold font-poppins mb-3 text-gray-900">100% Organic</h3>
+                    <p class="text-gray-600 leading-relaxed">All our produce is certified organic, grown without harmful pesticides or synthetic fertilizers.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-cream rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-on-scroll" style="transition-delay: 100ms;">
+                    <div class="text-4xl mb-4"><i class="fas fa-truck text-green-600"></i></div>
+                    <h3 class="text-2xl font-bold font-poppins mb-3 text-gray-900">24h Delivery</h3>
+                    <p class="text-gray-600 leading-relaxed">Receive your order within 24 hours. Picked fresh today, at your doorstep tomorrow.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-cream rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-on-scroll" style="transition-delay: 200ms;">
+                    <div class="text-4xl mb-4"><i class="fas fa-handshake text-green-600"></i></div>
+                    <h3 class="text-2xl font-bold font-poppins mb-3 text-gray-900">Direct from Farms</h3>
+                    <p class="text-gray-600 leading-relaxed">Support local farmers directly. Every purchase helps sustain our agricultural community.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-cream rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-on-scroll" style="transition-delay: 300ms;">
+                    <div class="text-4xl mb-4"><i class="fas fa-check-circle text-green-600"></i></div>
+                    <h3 class="text-2xl font-bold font-poppins mb-3 text-gray-900">Quality Guaranteed</h3>
+                    <p class="text-gray-600 leading-relaxed">Every item is hand-picked and quality checked before delivery. Freshness guaranteed.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-cream rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-on-scroll" style="transition-delay: 400ms;">
+                    <div class="text-4xl mb-4"><i class="fas fa-recycle text-green-600"></i></div>
+                    <h3 class="text-2xl font-bold font-poppins mb-3 text-gray-900">Sustainable Packaging</h3>
+                    <p class="text-gray-600 leading-relaxed">We use 100% recyclable and compostable packaging to protect our environment.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-cream rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-on-scroll" style="transition-delay: 500ms;">
+                    <div class="text-4xl mb-4"><i class="fas fa-credit-card text-green-600"></i></div>
+                    <h3 class="text-2xl font-bold font-poppins mb-3 text-gray-900">Secure Payment</h3>
+                    <p class="text-gray-600 leading-relaxed">Your transactions are encrypted and secure. We accept all major payment methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SHOP / PRODUCTS SECTION ============ -->
+    <section id="shop" class="py-24 bg-gradient-to-b from-cream to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-4 text-gray-900">Fresh Produce Collection</h2>
+                <p class="text-lg text-gray-600">Browse our curated selection of premium farm produce</p>
+            </div>
+
+            <!-- Filters & Search -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 mb-12">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Search Bar -->
+                    <div class="md:col-span-1 relative">
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            placeholder="Search products..." 
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition"
+                        >
+                        <i class="fas fa-search absolute right-4 top-3.5 text-gray-400"></i>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div>
+                        <select id="category-filter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+
+                    <!-- Sort -->
+                    <div>
+                        <select id="sort-filter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+                            <option value="default">Sort by: Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Buttons -->
+                <div class="mt-6 flex flex-wrap gap-3" id="category-buttons">
+                    <button class="category-btn px-6 py-2 rounded-full font-medium transition-all duration-300 bg-green-600 text-white border-2 border-green-600" data-category="all">
+                        All Products
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+                <!-- Products will be rendered here -->
+                <div class="col-span-full text-center py-12 text-gray-500">
+                    <p>Loading products...</p>
+                </div>
+            </div>
+
+            <!-- Load More (or pagination indicator) -->
+            <div class="text-center">
+                <p id="products-count" class="text-gray-600 text-lg font-medium"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Image/Placeholder -->
+                <div class="relative fade-in-on-scroll">
+                    <div class="bg-gradient-to-br from-green-400 to-yellow-300 rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1488459716781-6f3ee1bfc630?w=600&h=600&fit=crop" alt="Farm landscape" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl max-w-xs">
+                        <p class="text-sm text-gray-600">
+                            <i class="fas fa-quote-left text-green-600 mr-2"></i>
+                            "Supporting local farms, delivering freshness to your table."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="fade-in-on-scroll">
+                    <span class="text-green-600 font-semibold">OUR STORY</span>
+                    <h2 class="text-4xl md:text-5xl font-bold font-poppins my-4 text-gray-900">Farm2Home: Connecting Farms with Homes</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-lg">
+                        Founded in 2023, Farm2Home was born from a simple mission: to bridge the gap between sustainable farms and conscious consumers. We believe that everyone deserves access to fresh, organic produce without compromising on quality or environmental values.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                        Our platform directly connects you with local farmers, eliminating unnecessary middlemen and ensuring that you get the freshest produce while farmers receive fair compensation for their hard work.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-3xl font-bold text-green-600 font-poppins">2023</p>
+                            <p class="text-gray-600 font-medium">Founded</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-green-600 font-poppins">500+</p>
+                            <p class="text-gray-600 font-medium">Active Customers</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-green-600 font-poppins">50+</p>
+                            <p class="text-gray-600 font-medium">Farm Partners</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-green-600 font-poppins">100%</p>
+                            <p class="text-gray-600 font-medium">Organic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS SECTION ============ -->
+    <section id="testimonials" class="py-24 bg-gradient-to-b from-cream to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-4">What Our Customers Say</h2>
+                <p class="text-lg text-gray-600">Join thousands of satisfied customers enjoying fresh, organic produce</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-green-600 hover:shadow-2xl transition-shadow fade-in-on-scroll">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The freshness is unbelievable! I can taste the difference in every vegetable. Farm2Home has become a staple in my grocery routine."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/40?img=1" alt="Customer" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-semibold text-gray-900">Sarah Johnson</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-green-600 hover:shadow-2xl transition-shadow fade-in-on-scroll" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"As someone committed to sustainability, I love knowing exactly where my food comes from. The delivery is fast, and support is excellent!"</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/40?img=2" alt="Customer" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-semibold text-gray-900">Michael Chen</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border-l-4 border-green-600 hover:shadow-2xl transition-shadow fade-in-on-scroll" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"My kids actually enjoy eating vegetables now! The quality and taste are exceptional. Worth every penny and I love supporting local farms."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://i.pravatar.cc/40?img=3" alt="Customer" class="w-10 h-10 rounded-full">
+                        <div>
+                            <p class="font-semibold text-gray-900">Emma Williams</p>
+                            <p class="text-sm text-gray-500">Verified Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA SECTION ============ -->
+    <section id="cta" class="py-24 bg-gradient-to-r from-green-700 via-green-600 to-green-500 text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-6">Get 20% Off Your First Order</h2>
+            <p class="text-xl mb-8 text-green-100">Subscribe to our newsletter and receive exclusive discounts, farm stories, and seasonal specials.</p>
+
+            <form id="newsletter-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    required
+                    class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                >
+                <button 
+                    type="submit" 
+                    class="px-8 py-3 bg-white text-green-600 font-bold rounded-lg hover:bg-green-50 transition-colors duration-300"
+                >
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-leaf text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">Farm2Home</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Connecting sustainable farms with conscious consumers.</p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#" class="text-green-400 hover:text-green-300 transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-green-400 hover:text-green-300 transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-green-400 hover:text-green-300 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-green-400 hover:text-green-300 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#home" class="hover:text-green-400 transition-colors">Home</a></li>
+                        <li><a href="#shop" class="hover:text-green-400 transition-colors">Shop</a></li>
+                        <li><a href="#about" class="hover:text-green-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Support</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex gap-3">
+                            <i class="fas fa-envelope text-green-400 mt-1"></i>
+                            <span>support@farm2home.com</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-phone text-green-400 mt-1"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-map-marker text-green-400 mt-1"></i>
+                            <span>San Francisco, CA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                    <p>&copy; 2024 Farm2Home. All rights reserved.</p>
+                    <div class="flex gap-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-green-400 transition-colors">Privacy</a>
+                        <a href="#" class="hover:text-green-400 transition-colors">Terms</a>
+                        <a href="#" class="hover:text-green-400 transition-colors">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ PRODUCT DETAILS MODAL ============ -->
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl my-8">
+            <!-- Modal Content -->
+            <div id="modal-content" class="grid md:grid-cols-2 gap-8 p-8">
+                <!-- Product Image -->
+                <div class="flex flex-col justify-center">
+                    <img id="modal-product-image" src="" alt="Product" class="w-full h-96 object-cover rounded-xl mb-4">
+                    <p id="modal-product-category" class="text-green-600 font-semibold text-sm"></p>
+                </div>
+
+                <!-- Product Details -->
+                <div>
+                    <h2 id="modal-product-name" class="text-3xl font-bold font-poppins mb-3 text-gray-900"></h2>
+                    
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                        <span class="text-gray-600 text-sm">4.8 (200+ reviews)</span>
+                    </div>
+
+                    <div class="mb-6">
+                        <span id="modal-product-price" class="text-3xl font-bold text-green-600"></span>
+                        <span class="text-gray-500 ml-3 line-through text-lg"></span>
+                    </div>
+
+                    <p id="modal-product-description" class="text-gray-600 leading-relaxed mb-8"></p>
+
+                    <div class="mb-8">
+                        <h4 class="font-bold text-gray-900 mb-3">Product Details</h4>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>100% Organic Certified</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Freshly Harvested</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>Sustainably Grown</li>
+                            <li><i class="fas fa-check text-green-600 mr-2"></i>No Pesticides</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex items-center border border-gray-300 rounded-lg">
+                            <button id="modal-qty-decrease" class="px-4 py-2 text-gray-600 hover:bg-gray-100">−</button>
+                            <input id="modal-qty-input" type="number" value="1" min="1" class="w-12 text-center border-0 focus:outline-none">
+                            <button id="modal-qty-increase" class="px-4 py-2 text-gray-600 hover:bg-gray-100">+</button>
+                        </div>
+                        <button id="modal-add-to-cart" class="flex-1 px-6 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-bold rounded-lg hover:shadow-lg transition-all">
+                            <i class="fas fa-shopping-cart mr-2"></i>Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Close Button -->
+            <button id="modal-close" class="absolute top-6 right-6 text-gray-500 hover:text-gray-700 text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============ CART SIDEBAR ============ -->
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-full sm:w-96 bg-white shadow-2xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Cart Header -->
+        <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-6 flex items-center justify-between">
+            <h2 class="text-2xl font-bold font-poppins">Your Cart</h2>
+            <button id="cart-close" class="text-2xl hover:text-green-100 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <div class="text-center py-12 text-gray-500">
+                <i class="fas fa-shopping-bag text-4xl mb-4 opacity-30"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="border-t border-gray-200 p-6 bg-gray-50">
+            <div class="mb-6 space-y-2">
+                <div class="flex justify-between text-gray-600">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between text-gray-600">
+                    <span>Shipping</span>
+                    <span id="cart-shipping" class="text-green-600 font-semibold">Free</span>
+                </div>
+                <div class="border-t border-gray-300 pt-2 flex justify-between text-lg font-bold text-gray-900">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button id="checkout-btn" class="w-full py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-bold rounded-lg hover:shadow-lg transition-all">
+                Proceed to Checkout
+            </button>
+            <button id="continue-shopping" class="w-full py-3 mt-2 border-2 border-green-600 text-green-600 font-bold rounded-lg hover:bg-green-50 transition-all">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
+    <!-- ============ TOAST NOTIFICATION ============ -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50"></div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
