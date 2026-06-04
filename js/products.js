@@ -226,9 +226,11 @@ const PRODUCTS = [
     }
 ];
 
-const PLACEHOLDER_IMAGE = 'assets/placeholder.svg';
+const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1495195134817-aeb325a55b65?w=500&h=500&fit=crop';
 PRODUCTS.forEach(product => {
-    product.image = PLACEHOLDER_IMAGE;
+    if (!product.image) {
+        product.image = PLACEHOLDER_IMAGE;
+    }
 });
 
 console.log('Loaded PRODUCTS:', PRODUCTS.length);
