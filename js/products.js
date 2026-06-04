@@ -54,7 +54,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 8.49,
         originalPrice: 10.99,
-        image: "https://images.unsplash.com/photo-1518976024611-48933e6f1b49?w=500&h=500&fit=crop",
+        image: "https://source.unsplash.com/featured/500x500/?chicken%20wings",
         description: "Crispy wing sections ready for your favorite sauces. Great for appetizers, parties, and game day.",
         rating: 4.9,
         inStock: true
@@ -76,7 +76,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 9.99,
         originalPrice: 12.49,
-        image: "https://images.unsplash.com/photo-1562967916-eb82221dfb27?w=500&h=500&fit=crop",
+        image: "https://source.unsplash.com/featured/500x500/?chicken%20cutlets",
         description: "Thin-sliced chicken cutlets for easy pan-searing or breading. Fast, flavorful, and versatile.",
         rating: 4.7,
         inStock: true
@@ -109,7 +109,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 12.99,
         originalPrice: 15.99,
-        image: "https://images.unsplash.com/photo-1548222316875-1b2ea11821f8?w=500&h=500&fit=crop",
+        image: "https://source.unsplash.com/featured/500x500/?chicken%20kebabs",
         description: "Marinated chicken kebabs ready for skewering and grilling. Great for family gatherings.",
         rating: 4.8,
         inStock: true
@@ -120,7 +120,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 13.49,
         originalPrice: 16.49,
-        image: "https://images.unsplash.com/photo-1605475124686-83b51ed8ad9f?w=500&h=500&fit=crop",
+        image: "https://source.unsplash.com/featured/500x500/?smoked%20chicken",
         description: "Smoked chicken breast with a savory, rich flavor. Perfect for sandwiches or chef-style salads.",
         rating: 4.7,
         inStock: true
@@ -131,7 +131,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 12.49,
         originalPrice: 15.49,
-        image: "https://images.unsplash.com/photo-1481931715705-36f42a255c40?w=500&h=500&fit=crop",
+        image: "https://source.unsplash.com/featured/500x500/?garlic%20herb%20chicken",
         description: "Garlic and herb-marinated chicken pieces ready for roasting or grilling with bold flavors.",
         rating: 4.8,
         inStock: true
@@ -153,7 +153,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 11.99,
         originalPrice: 14.99,
-        image: "https://images.unsplash.com/photo-1514516870926-9d65a18b191b?w=500&h=500&fit=crop",
+        image: "https://source.unsplash.com/featured/500x500/?honey%20glazed%20chicken",
         description: "Sweet honey glazed thighs with tender meat and crisp edges. Ideal for family dinners.",
         rating: 4.9,
         inStock: true
