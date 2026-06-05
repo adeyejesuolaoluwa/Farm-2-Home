@@ -10,7 +10,7 @@ const PRODUCTS = [
         category: "chicken",
         price: 14.99,
         originalPrice: 18.99,
-        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&h=500&fit=crop",
+        image: "https://images.unsplash.com/photo-1517971071642-4492d7dc15b2?w=500&h=500&fit=crop",
         description: "Farm-fresh whole chicken raised on open pasture. Juicy, tender, and perfect for roasting or slow cooking.",
         rating: 4.9,
         inStock: true
